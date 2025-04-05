@@ -3,29 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau Dashboard Embed</title>
+    <title>Data Analytics Dashboard 📊</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Tableau Dashboard</h1>
+        <h1>Welcome to Our Data Analytics Dashboard 🌟</h1>
+        <p>Your one-stop solution for insightful data analytics!</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section>
-            <h2>Embedded Tableau Dashboard</h2>
-            <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
-                    width="800" 
-                    height="600" 
-                    frameborder="0" 
-                    allowfullscreen="true">
-            </iframe>
+        <section id="overview">
+            <h2>Overview 📈</h2>
+            <p>Explore our comprehensive data analytics solutions that help you make informed decisions.</p>
+        </section>
+
+        <section id="analytics">
+            <h2>Analytics Dashboard 📊</h2>
+            <div class="tableau-container">
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard2?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
+                        width="100%" 
+                        height="600px" 
+                        frameborder="0" 
+                        allowfullscreen="true">
+                </iframe>
+            </div>
+            <p>Our Tableau dashboard provides real-time insights and visualizations to help you understand your data better.</p>
+        </section>
+
+        <section id="insights">
+            <h2>Key Insights 🔍</h2>
+            <ul>
+                <li>Insight 1: Data trends over time.</li>
+                <li>Insight 2: Customer behavior analysis.</li>
+                <li>Insight 3: Market segmentation.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us 📬</h2>
+            <p>If you have any questions or need further information, feel free to reach out!</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message ✉️</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2023 Data Analytics Dashboard. All rights reserved. 🌐</p>
     </footer>
 </body>
 </html>
