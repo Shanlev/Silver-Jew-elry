@@ -76,17 +76,17 @@
             <p>Explore our comprehensive data analytics solutions that help you make informed decisions.</p>
         </section>
 
-        <section id="analytics">
-            <h2>Analytics Dashboard 📊</h2>
-            <div class="tableau-container">
-                <iframe src="https://public.tableau.com/views/YourDashboardName/YourViewName?:embed=y&:display_count=yes" 
-                        width="100%" 
-                        height="800px" 
-                        frameborder="0" 
-                        allowfullscreen="true">
-                </iframe>
+        <section id="analytics"> <div class="tableau-embed">
+                <h3>Dashboard 1: Book2 Analytics 📈</h3>
+                <!-- Embedded Tableau Public Visualization using Embedding API v3 -->
+                <tableau-viz 
+                    id="tableauViz" 
+                    src="https://public.tableau.com/views/Book1_17438614664350/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
+                    toolbar="bottom" 
+                    hide-tabs>
+                </tableau-viz>
+                <p>Interact with the dashboard above to explore the data! 🖱</p>
             </div>
-            <p>Our Tableau dashboard provides real-time insights and visualizations to help you understand your data better.</p>
         </section>
 
         <section id="insights">
