@@ -3,208 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics Hub 📊</title>
-    <!-- Load the Tableau Embedding API v3 library -->
-    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <title>Data Analytics Dashboard 📊</title>
     <style>
-        /* CSS for styling and animations */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd, #c2e9fb);
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
         }
-
-        /* Header styling with gradient and animation */
         header {
-            background: linear-gradient(90deg, #ff6a88, #ff99ac);
-            color: white;
             text-align: center;
-            padding: 2rem 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-            animation: slideIn 1s ease-out;
+            padding: 50px 20px;
         }
-
-        @keyframes slideIn {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-        }
-
-        /* Navigation bar */
         nav {
-            background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
         }
-
-        nav a {
-            color: #333;
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
             text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-
-        nav a:hover {
-            color: #ff6a88;
-            text-decoration: underline;
+        nav ul li a:hover {
+            color: #ffeb3b;
         }
-
-        /* Main content */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        main {
+            padding: 20px;
         }
-
-        h2 {
-            color: #ff6a88;
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Section styling */
-        .section {
-            background: white;
-            padding: 2rem;
+        .tableau-container {
+            margin: 20px 0;
+            border: 2px solid #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease;
+            overflow: hidden;
         }
-
-        .section:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Tableau embed styling */
-        .tableau-embed {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .tableau-embed h3 {
-            color: #a1c4fd;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Tableau viz */
-        tableau-viz {
-            width: 100%;
-            height: 600px;
-        }
-
-        @media (max-width: 768px) {
-            tableau-viz {
-                height: 400px;
-            }
-        }
-
-        /* Fun button styling */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(90deg, #ff6a88, #ff99ac);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: transform 0.2s ease, background 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
-            background: linear-gradient(90deg, #ff99ac, #ff6a88);
-        }
-
-        /* Footer */
         footer {
-            background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
-            color: #333;
             text-align: center;
-            padding: 1rem 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
             position: relative;
             bottom: 0;
             width: 100%;
         }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            nav a { margin: 0 0.5rem; }
-            .container { padding: 0 0.5rem; }
-        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1>Data Analytics Hub 📈✨</h1>
-        <p>Unlock Insights with Tableau Visualizations! 🚀</p>
+        <h1>Welcome to Our Data Analytics Dashboard 🌟</h1>
+        <p>Your one-stop solution for insightful data analytics!</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
-        <a href="#home">Home 🏠</a>
-        <a href="#tableau">Tableau Insights 📊</a>
-        <a href="#about">About Us ℹ</a>
-        <a href="#contact">Contact 📧</a>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
     </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Welcome Section -->
-        <div class="section" id="home">
-            <h2>Welcome to Our Analytics Platform! 🌟</h2>
-            <p>
-                Dive into the world of data with our interactive Tableau dashboards! We provide insights that help businesses grow, make informed decisions, and uncover hidden trends. Let’s make data fun and actionable! 🎉
-            </p>
-            <a href="#tableau" class="btn">Explore Tableau Dashboards 🚀</a>
-        </div>
+    <main>
+        <section id="overview">
+            <h2>Overview 📈</h2>
+            <p>Explore our comprehensive data analytics solutions that help you make informed decisions.</p>
+        </section>
 
-        <!-- Tableau Section -->
-        <div class="section" id="tableau">
-            <h2>Tableau Insights 📊</h2>
-            <p>
-                Check out our latest data visualizations below. Interact with the dashboard to explore trends, metrics, and more! 🔍
-            </p>
-            <div class="tableau-embed">
-                <h3>Dashboard 1: Book2 Analytics 📈</h3>
-                <!-- Embedded Tableau Public Visualization using Embedding API v3 -->
-                <tableau-viz 
-                    id="tableauViz" 
-                    src="https://public.tableau.com/views/Book1_17438614664350/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
-                    toolbar="bottom" 
-                    hide-tabs>
-                </tableau-viz>
-                <p>Interact with the dashboard above to explore the data! 🖱</p>
+        <section id="analytics">
+            <h2>Analytics Dashboard 📊</h2>
+            <div class="tableau-container">
+                <iframe src="https://public.tableau.com/views/YourDashboardName/YourViewName?:embed=y&:display_count=yes" 
+                        width="100%" 
+                        height="800px" 
+                        frameborder="0" 
+                        allowfullscreen="true">
+                </iframe>
             </div>
-        </div>
+            <p>Our Tableau dashboard provides real-time insights and visualizations to help you understand your data better.</p>
+        </section>
+
+        <section id="insights">
+            <h2>Key Insights 🔍</h2>
+            <ul>
+                <li>Insight 1: Data trends over time.</li>
+                <li>Insight 2: Customer behavior analysis.</li>
+                <li>Insight 3: Market segmentation.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us 📬</h2>
+            <p>If you have any questions or need further information, feel free to reach out!</p>
+       
 
         <!-- About Section -->
         <div class="section" id="about">
