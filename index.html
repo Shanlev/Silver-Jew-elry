@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics Hub 📊✨</title>
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Data Analytics Hub 📊✨</title>    
     <style>
-        /* Gradient Background and General Styles */
+        /* General Styles */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             min-height: 100vh;
             color: #ffffff;
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: linear-gradient(135deg, #222, #555);
+            color: #f0f0f0;
         }
 
         /* Header Styles */
@@ -30,12 +37,6 @@
             letter-spacing: 2px;
         }
 
-        h2 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 1.5rem 0;
-        }
-
         /* Navigation */
         nav {
             background: rgba(255, 255, 255, 0.1);
@@ -51,7 +52,7 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: transform 0.3s, color 0.3s;
         }
 
         nav a:hover {
@@ -84,10 +85,44 @@
             overflow: hidden;
         }
 
-        /* Fun Elements */
-        .emoji-bounce {
-            display: inline-block;
-            animation: bounce 2s infinite;
+        /* Dark Mode Toggle */
+        .toggle-dark-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .toggle-dark-mode:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        /* Scroll to Top Button */
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        #scrollTop:hover {
+            background: #4ecdc4;
         }
 
         /* Animations */
@@ -101,82 +136,76 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .toggle-dark-mode {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Toggle Dark Mode Button -->
+    <button class="toggle-dark-mode" onclick="toggleDarkMode()">🌙 מצב כהה</button>
+
+    <!-- Header -->
     <header>
-        <h1>Data Analytics Hub 📈🚀</h1>
-        <p>Unleash the Power of Insights! ✨</p>
+        <h1>Data Analytics Hub 📊</h1>
     </header>
 
+    <!-- Navigation -->
     <nav>
-        <a href="#home">Home 🏠</a>
-        <a href="#dashboard">Dashboard 📊</a>
-        <a href="#insights">Insights 💡</a>
-        <a href="#contact">Contact 📩</a>
+        <a href="#">Home</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Reports</a>
+        <a href="#">Contact</a>
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
-        <section id="home">
-            <h2>Welcome to the Future of Data! 🌟</h2>
-            <p>Dive into our interactive analytics and explore trends like never before! 😎</p>
-        </section>
-
-        <section id="dashboard" class="tableau-section">
-            <h2>Our Awesome Dashboard <span class="emoji-bounce">📊</span></h2>
-            <p>Check out this cool Tableau viz below! 👇</p>
-            <div id="tableau-viz">
-                <iframe 
-                    src="https://public.tableau.com/views/Book1_17438614664350/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link&:embed=y&:showVizHome=n&:apiID=host0" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0">
-                </iframe>
-            </div>
-        </section>
-
-        <section id="insights">
-            <h2>Key Insights <span class="emoji-bounce">💡</span></h2>
-            <p>Discover trends, patterns, and more with our dynamic data visualizations! 🎉</p>
-        </section>
+        <div class="tableau-section">
+            <h2>Interactive Data Dashboard</h2>
+            <iframe id="tableau-viz" src="https://public.tableau.com/views/SampleDashboard/Sheet1"></iframe>
+        </div>
     </div>
 
-    <footer>
-        <p>© 2025 Data Analytics Hub | Made with ❤ & ☕</p>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" onclick="scrollToTop()">⬆️</button>
 
+    <!-- Scripts -->
     <script>
-        // Simple JS to enhance interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const sectionId = link.getAttribute('href').substring(1);
-                    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            let button = document.querySelector(".toggle-dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                button.innerHTML = "☀️ מצב בהיר";
+            } else {
+                button.innerHTML = "🌙 מצב כהה";
+            }
+        }
 
-            // Add a fun alert after 5 seconds
-            setTimeout(() => {
-                alert('Enjoying the data? Let’s make analytics fun! 🎉');
-            }, 5000);
-        });
+        // Scroll to Top Button
+        let scrollButton = document.getElementById("scrollTop");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     </script>
+
 </body>
 </html>
