@@ -222,7 +222,7 @@
         // Reload Tableau function
         function reloadTableau() {
             tableauContainer.innerHTML = `
-                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
                     allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>`;
             const newIframe = tableauContainer.querySelector('iframe');
             newIframe.onerror = iframe.onerror;
