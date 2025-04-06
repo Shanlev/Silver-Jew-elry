@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Breeze Analytics 📊🌿</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -29,7 +25,6 @@
             font-size: 2.5rem;
             margin: 0;
             color: #ffaaa5;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         nav {
@@ -46,7 +41,6 @@
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 600;
-            transition: color 0.3s ease;
         }
 
         nav a:hover {
@@ -65,7 +59,6 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            animation: slideIn 0.5s ease-out;
         }
 
         h2 {
@@ -81,7 +74,6 @@
             height: 0;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             background: #fff;
         }
 
@@ -103,4 +95,138 @@
         }
 
         .stat-card {
-            background: linear-gradient(135deg
+            background: linear-gradient(135deg, #ffaaa5, #ffd3b6);
+            padding: 1.5rem;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: scale(1.1);
+        }
+
+        .stat-card h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .stat-card p {
+            margin: 0.5rem 0 0;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #ffd3b6;
+            color: #333;
+        }
+
+        .reload-btn {
+            background: #ffaaa5;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .reload-btn:hover {
+            background: #a8e6cf;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Breeze Analytics 📊🌿</h1>
+        <p>Fresh Insights, Made Simple! ☀️</p>
+    </header>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href=" #insights">Insights</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="dashboard">
+            <h2>Interactive Dashboard 🎨</h2>
+            <p>Explore the Data Breeze Below! 🌈</p>
+            <div class="tableau-container" id="tableauEmbed">
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
+                    allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+            </div>
+            <button class="reload-btn" onclick="reloadTableau()">Reload Dashboard 🔄</button>
+        </div>
+
+        <div class="section" id="insights">
+            <h2>Key Insights 🌟</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>📊 Data Points</h3>
+                    <p>Lots of Fun Metrics!</p>
+                </div>
+                <div class="stat-card">
+                    <h3>⏳ Fresh Updates</h3>
+                    <p>Always Up to Date!</p>
+                </div>
+                <div class="stat-card">
+                    <h3>🌼 Trends</h3>
+                    <p>Easy Patterns to Spot!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="about">
+            <h2>About Us 😊</h2>
+            <p>We’re a friendly team making data simple and fun with Tableau! 🌸</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Data Breeze Analytics | Crafted with 🌞 & 🍵</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Tableau connection check and fallback
+        const tableauContainer = document.getElementById('tableauEmbed');
+        const iframe = tableauContainer.querySelector('iframe');
+
+        iframe.onerror = () => {
+            tableauContainer.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ffaaa5;">
+                    <h3>Oops! 😅</h3>
+                    <p>Couldn’t connect to Tableau Public. Check your connection or try again!</p>
+                    <p><a href="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" target="_blank" style="color: #a8e6cf;">Open in Tableau Public</a></p>
+                </div>`;
+        };
+
+        // Reload Tableau function
+        function reloadTableau() {
+            tableauContainer.innerHTML = `
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
+                    allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>`;
+            const newIframe = tableauContainer.querySelector('iframe');
+            newIframe.onerror = iframe.onerror;
+        }
+    </script>
+</body>
+</html>
