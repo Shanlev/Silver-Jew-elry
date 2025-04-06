@@ -42,4 +42,167 @@
             margin: 0 1rem;
             font-weight: bold;
             transition: color 0.3s;
-       
+        }
+
+        nav a:hover {
+            color: #a777e3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        h2 {
+            color: #4facfe;
+            border-bottom: 3px solid #a777e3;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .tableau-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(110, 142, 251, 0.3);
+        }
+
+        .tableau-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            background: linear-gradient(90deg, #a777e3, #6e8efb);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Analytics Hub 📈🚀</h1>
+        <p>Where Numbers Tell Awesome Stories! ✨</p>
+    </header>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#insights">Insights</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="dashboard">
+            <h2>Interactive Dashboard 🎛️</h2>
+            <p>Check out our cool Tableau visualization below! 👇</p>
+            <div class="tableau-container">
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="section" id="insights">
+            <h2>Key Insights 🔍</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>📊 Data Points</h3>
+                    <p>Thousands of metrics analyzed!</p>
+                </div>
+                <div class="stat-card">
+                    <h3>⏱️ Real-Time</h3>
+                    <p>Up-to-the-minute updates!</p>
+                </div>
+                <div class="stat-card">
+                    <h3>🌟 Trends</h3>
+                    <p>Spotting patterns like pros!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="about">
+            <h2>About Us 🤓</h2>
+            <p>We're a team of data enthusiasts bringing you the coolest analytics experience! 
+            Powered by Tableau and a sprinkle of magic ✨</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Data Analytics Hub | Made with ❤️ & ☕</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add bounce animation to stat cards on hover
+        const statCards = document.querySelectorAll('.stat-card');
+        statCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.animation = 'bounce 0.5s';
+            });
+            card.addEventListener('animationend', () => {
+                card.style.animation = '';
+            });
+        });
+
+        // Dynamic greeting based on time
+        const greeting = document.querySelector('header p');
+        const hour = new Date().getHours();
+        if (hour < 12) greeting.textContent = 'Good Morning! Time for some data fun! 🌞';
+        else if (hour < 18) greeting.textContent = 'Good Afternoon! Data awaits! ☀️';
+        else greeting.textContent = 'Good Evening! Nighttime analytics! 🌙';
+    </script>
+</body>
+</html>
