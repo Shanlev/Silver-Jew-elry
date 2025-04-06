@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Breeze Analytics 📊🌿</title>
+    <title>Vivid Analytics 🌟📊</title>
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f0f4f8;
-            color: #333;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #263238;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
-            padding: 2rem;
+            background: linear-gradient(90deg, #00acc1, #4dd0e1);
+            padding: 2.5rem 1rem;
             text-align: center;
-            border-bottom: 4px solid #ffd3b6;
+            color: #fff;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin: 0;
-            color: #ffaaa5;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         nav {
@@ -33,18 +33,19 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            color: #ffaaa5;
+            color: #00acc1;
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #a8e6cf;
+            color: #ff7043;
         }
 
         .container {
@@ -55,17 +56,20 @@
 
         .section {
             background: #fff;
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
 
         h2 {
-            color: #a8e6cf;
-            border-bottom: 2px solid #ffd3b6;
+            color: #00acc1;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #ff7043;
             padding-bottom: 0.5rem;
-            font-size: 1.8rem;
         }
 
         .tableau-container {
@@ -73,8 +77,9 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 8px;
             background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .tableau-container iframe {
@@ -86,70 +91,60 @@
             border: none;
         }
 
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .stat-card {
-            background: linear-gradient(135deg, #ffaaa5, #ffd3b6);
+        .insight-card {
+            background: linear-gradient(135deg, #ff7043, #ffccbc);
             padding: 1.5rem;
-            border-radius: 50%;
-            width: 180px;
-            height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-card:hover {
-            transform: scale(1.1);
-        }
-
-        .stat-card h3 {
-            margin: 0;
             color: #fff;
-            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .stat-card p {
-            margin: 0.5rem 0 0;
-            color: #fff;
-            font-size: 0.9rem;
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem;
-            background: #ffd3b6;
-            color: #333;
+            padding: 2rem;
+            background: linear-gradient(90deg, #4dd0e1, #00acc1);
+            color: #fff;
         }
 
         .reload-btn {
-            background: #ffaaa5;
+            background: #ff7043;
             color: #fff;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
             cursor: pointer;
             margin-top: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
         }
 
         .reload-btn:hover {
-            background: #a8e6cf;
+            background: #00acc1;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Data Breeze Analytics 📊🌿</h1>
-        <p>Fresh Insights, Made Simple! ☀️</p>
+        <h1>Vivid Analytics 🌟📊</h1>
+        <p>Where Data Comes to Life! 🚀</p>
     </header>
 
     <nav>
@@ -160,8 +155,8 @@
 
     <div class="container">
         <div class="section" id="dashboard">
-            <h2>Interactive Dashboard 🎨</h2>
-            <p>Explore the Data Breeze Below! 🌈</p>
+            <h2>Data Dashboard 🎛️</h2>
+            <p>Dive into the numbers below! 📈</p>
             <div class="tableau-container" id="tableauEmbed">
                 <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
                     allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
@@ -170,7 +165,80 @@
         </div>
 
         <div class="section" id="insights">
-            <h2>Key Insights 🌟</h2>
-            <div class="-stats-grid">
-                <div class="stat-card">
-                    <h3>📊 Data
+            <h2>Insights Spotlight ✨</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h3>📊 Data Flow</h3>
+                    <p>Loads of metrics to explore!</p>
+                </div>
+                <div class="insight-card">
+                    <h3>⚡ Real-Time</h3>
+                    <p>Fresh data every second!</p>
+                </div>
+                <div class="insight-card">
+                    <h3>🌈 Patterns</h3>
+                    <p>Trends that pop out!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="about">
+            <h2>About Us 😎</h2>
+            <p>We’re a team passionate about turning data into stories with Tableau! 🌍</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Vivid Analytics | Built with 🎨 & ☕</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Tableau handling
+        const tableauContainer = document.getElementById('tableauEmbed');
+        const iframe = tableauContainer.querySelector('iframe');
+
+        iframe.onerror = () => {
+            tableauContainer.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ff7043;">
+                    <h3>Oops! 😅</h3>
+                    <p>Couldn’t connect to Tableau Public. Try these:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>🌐 Check your internet</li>
+                        <li>🔒 Disable VPN/firewall</li>
+                        <li>🔄 Use another browser</li>
+                        <li>📌 <a href="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" target="_blank" style="color: #00acc1;">Open directly</a></li>
+                    </ul>
+                </div>`;
+        };
+
+        // Reload Tableau function
+        function reloadTableau() {
+            tableauContainer.innerHTML = `
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
+                    allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>`;
+            const newIframe = tableauContainer.querySelector('iframe');
+            newIframe.onerror = iframe.onerror;
+            setTimeout(() => {
+                if (!newIframe.contentWindow || newIframe.contentWindow.location.href === 'about:blank') {
+                    newIframe.onerror();
+                }
+            }, 5000);
+        }
+
+        // Check iframe load
+        setTimeout(() => {
+            if (!iframe.contentWindow || iframe.contentWindow.location.href === 'about:blank') {
+                iframe.onerror();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
