@@ -3,93 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Data Analytics Hub 📊🔥</title>
+    <title>Neon Data Nexus 📊🌌</title>
     <style>
         * {
             box-sizing: border-box;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', monospace;
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            color: #fff;
+            background: #0d0d1a;
+            color: #00ffcc;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(120deg, #ff00cc, #3333ff);
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
             padding: 3rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 5px solid #ff00ff;
         }
 
         header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
-            animation: rotate 10s linear infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"%3E%3Ccircle cx="10" cy="10" r="1" fill="%23ff00ff" opacity="0.3"/%3E%3C/svg%3E') repeat;
+            animation: glitch 2s infinite;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 0;
-            text-shadow: 0 0 15px rgba(255,255,255,0.8);
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
             position: relative;
             z-index: 1;
         }
 
         nav {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 2px solid #00ffff;
         }
 
         nav a {
-            color: #ffeb3b;
+            color: #ff00ff;
             text-decoration: none;
             margin: 0 1.5rem;
             font-weight: bold;
             transition: all 0.3s ease;
+            text-shadow: 0 0 5px #ff00ff;
         }
 
         nav a:hover {
-            color: #ff6b6b;
-            text-shadow: 0 0 10px #ff6b6b;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+            background: rgba(13, 13, 26, 0.8);
+            border: 2px solid #00ffcc;
+            border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            animation: popIn 0.8s ease-out;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+            animation: neonFade 1s ease-in-out;
         }
 
         h2 {
-            color: #ffeb3b;
-            border-bottom: 4px dashed #ff6b6b;
+            color: #ff00ff;
+            border-bottom: 3px solid #00ffff;
             padding-bottom: 0.5rem;
-            font-size: 2rem;
-            text-shadow: 0 0 10px rgba(255,235,59,0.5);
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px #ff00ff;
         }
 
         .tableau-container {
@@ -97,8 +99,8 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
             background: #fff;
         }
 
@@ -113,61 +115,67 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
 
         .stat-card {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
             padding: 1.5rem;
-            border-radius: 15px;
+            border-radius: 10px;
             text-align: center;
             transition: all 0.4s ease;
-            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
         }
 
         .stat-card:hover {
-            transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(90deg, #3333ff, #ff00cc);
-            position: relative;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            border-top: 5px solid #00ffcc;
         }
 
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            100% { transform: translate(0); }
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes neonFade {
+            0% { opacity: 0; box-shadow: 0 0 5px rgba(0, 255, 204, 0.2); }
+            100% { opacity: 1; box-shadow: 0 0 20px rgba(0, 255, 204, 0.5); }
         }
 
-        .particle {
+        .neon-particle {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(255,255,255,0.7);
+            width: 8px;
+            height: 8px;
+            background: #00ffff;
             border-radius: 50%;
-            animation: float 5s infinite;
+            box-shadow: 0 0 10px #00ffff;
+            animation: drift 4s infinite;
         }
 
-        @keyframes float {
+        @keyframes drift {
             0% { transform: translateY(100vh); opacity: 0; }
             50% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+            100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Cool Data Analytics Hub 📈⚡</h1>
-        <p>Data That Rocks the Sky! 🚀</p>
+        <h1>Neon Data Nexus 📈🌌</h1>
+        <p>Cyber Insights Await! ⚡️</p>
     </header>
 
     <nav>
@@ -178,40 +186,40 @@
 
     <div class="container">
         <div class="section" id="dashboard">
-            <h2>Interactive Dashboard 🎮</h2>
-            <p>Check out the Tableau Magic Here! 🌟</p>
-            <div class="tableau-container">
-                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
+            <h2>Cyber Dashboard 🎛️</h2>
+            <p>Dive into the Neon Data Grid! 🌃</p>
+            <div class="tableau-container" id="tableauEmbed">
+                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
                     allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
             </div>
         </div>
 
         <div class="section" id="insights">
-            <h2>Key Insights 🔑</h2>
+            <h2>Neon Insights 💡</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h3>📊 Data Points</h3>
-                    <p>Thousands of Metrics Analyzed!</p>
+                    <h3>📊 Data Streams</h3>
+                    <p>Millions of Bits Decoded!</p>
                 </div>
                 <div class="stat-card">
-                    <h3>⏱️ Real-Time</h3>
-                    <p>Updates Every Moment!</p>
+                    <h3>⚡ Live Feed</h3>
+                    <p>Real-Time Cyber Pulse!</p>
                 </div>
                 <div class="stat-card">
-                    <h3>🌈 Trends</h3>
-                    <p>Spotting Patterns Like Pros!</p>
+                    <h3>🌐 Matrix</h3>
+                    <p>Patterns in the Chaos!</p>
                 </div>
             </div>
         </div>
 
         <div class="section" id="about">
-            <h2>About Us 😎</h2>
-            <p>We’re a team of data geeks bringing you the coolest analytics experience! Powered by Tableau and a dash of magic ✨</p>
+            <h2>About the Nexus 🤖</h2>
+            <p>We’re cyberpunks decoding the universe, one byte at a time! Powered by Tableau’s neon magic ⚡️</p>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 Cool Data Analytics Hub | Made with 🔥 & ☕</p>
+        <p>© 2025 Neon Data Nexus | Forged in 💾 & ☕</p>
     </footer>
 
     <script>
@@ -223,34 +231,48 @@
             });
         });
 
-        // Particle effects
+        // Neon particle effects
         function createParticle() {
             const particle = document.createElement('div');
-            particle.className = 'particle';
+            particle.className = 'neon-particle';
             particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            particle.style.animationDuration = Math.random() * 2 + 2 + 's';
             document.body.appendChild(particle);
-            setTimeout(() => particle.remove(), 5000);
+            setTimeout(() => particle.remove(), 4000);
         }
 
-        setInterval(createParticle, 200);
+        setInterval(createParticle, 150);
 
         // Dynamic greeting
         const greeting = document.querySelector('header p');
         const hour = new Date().getHours();
-        if (hour < 12) greeting.textContent = 'Good Morning! Time for Cool Data! 🌞';
-        else if (hour < 18) greeting.textContent = 'Good Afternoon! Data Awaits! ☀️';
-        else greeting.textContent = 'Good Evening! Nighttime Analytics! 🌙';
+        if (hour < 12) greeting.textContent = 'Morning, Neon Runner! Data’s Hot! 🌅';
+        else if (hour < 18) greeting.textContent = 'Afternoon, Cybernaut! Dive In! ☀️';
+        else greeting.textContent = 'Night, Grid Hacker! Data Glows! 🌙';
 
-        // Tableau error fallback
+        // Tableau connection check and fallback
         const iframe = document.querySelector('.tableau-container iframe');
+        const tableauContainer = document.getElementById('tableauEmbed');
+
+        iframe.onload = () => {
+            console.log('Tableau iframe loaded successfully');
+        };
+
         iframe.onerror = () => {
-            iframe.parentElement.innerHTML = `
-                <div style="text-align: center; padding: 2rem; color: #ff6b6b;">
-                    <h3>Oops! 😅</h3>
-                    <p>Couldn’t load Tableau. Try refreshing or check your connection! 🌐</p>
+            tableauContainer.innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: #ff00ff;">
+                    <h3>Grid Down! 😱</h3>
+                    <p>Can’t sync with Tableau Public. Check your uplink or retry! 🌐</p>
+                    <p><a href="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" target="_blank" style="color: #00ffff; text-shadow: 0 0 5px #00ffff;">Jack into Tableau Public</a></p>
                 </div>`;
         };
+
+        // Test connection after 5 seconds
+        setTimeout(() => {
+            if (!iframe.contentWindow || iframe.contentWindow.location.href === 'about:blank') {
+                iframe.onerror();
+            }
+        }, 5000);
     </script>
 </body>
 </html>
