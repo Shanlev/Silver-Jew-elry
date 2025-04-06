@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מרכז ניתוח נתונים מגניב 📊🔥</title>
+    <title>Cool Data Analytics Hub 📊🔥</title>
     <style>
         * {
             box-sizing: border-box;
@@ -166,20 +166,20 @@
 </head>
 <body>
     <header>
-        <h1>מרכז ניתוח נתונים מגניב 📈⚡</h1>
-        <p>נתונים שמרקיעים שחקים! 🚀</p>
+        <h1>Cool Data Analytics Hub 📈⚡</h1>
+        <p>Data That Rocks the Sky! 🚀</p>
     </header>
 
     <nav>
-        <a href="#dashboard">לוח בקרה</a>
-        <a href="#insights">תובנות</a>
-        <a href="#about">אודות</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#insights">Insights</a>
+        <a href="#about">About</a>
     </nav>
 
     <div class="container">
         <div class="section" id="dashboard">
-            <h2>לוח בקרה אינטראקטיבי 🎮</h2>
-            <p>תראו את הקסם של Tableau כאן! 🌟</p>
+            <h2>Interactive Dashboard 🎮</h2>
+            <p>Check out the Tableau Magic Here! 🌟</p>
             <div class="tableau-container">
                 <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
                     allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
@@ -187,31 +187,31 @@
         </div>
 
         <div class="section" id="insights">
-            <h2>תובנות מפתח 🔑</h2>
+            <h2>Key Insights 🔑</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h3>📊 נקודות נתונים</h3>
-                    <p>אלפי מדדים מנותחים!</p>
+                    <h3>📊 Data Points</h3>
+                    <p>Thousands of Metrics Analyzed!</p>
                 </div>
                 <div class="stat-card">
-                    <h3>⏱️ זמן אמת</h3>
-                    <p>עדכונים בכל רגע!</p>
+                    <h3>⏱️ Real-Time</h3>
+                    <p>Updates Every Moment!</p>
                 </div>
                 <div class="stat-card">
-                    <h3>🌈 מגמות</h3>
-                    <p>זיהוי דפוסים כמו מקצוענים!</p>
+                    <h3>🌈 Trends</h3>
+                    <p>Spotting Patterns Like Pros!</p>
                 </div>
             </div>
         </div>
 
         <div class="section" id="about">
-            <h2>מי אנחנו? 😎</h2>
-            <p>צוות חובבי נתונים שמביא לכם את החוויה הכי מגניבה! מופעל על ידי Tableau וקורטוב של קסם ✨</p>
+            <h2>About Us 😎</h2>
+            <p>We’re a team of data geeks bringing you the coolest analytics experience! Powered by Tableau and a dash of magic ✨</p>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 מרכז ניתוח נתונים | נוצר עם 🔥 ו-☕</p>
+        <p>© 2025 Cool Data Analytics Hub | Made with 🔥 & ☕</p>
     </footer>
 
     <script>
@@ -238,17 +238,17 @@
         // Dynamic greeting
         const greeting = document.querySelector('header p');
         const hour = new Date().getHours();
-        if (hour < 12) greeting.textContent = 'בוקר טוב! זמן לנתונים מגניבים! 🌞';
-        else if (hour < 18) greeting.textContent = 'צהריים טובים! נתונים מחכים! ☀️';
-        else greeting.textContent = 'ערב טוב! ניתוח לילי! 🌙';
+        if (hour < 12) greeting.textContent = 'Good Morning! Time for Cool Data! 🌞';
+        else if (hour < 18) greeting.textContent = 'Good Afternoon! Data Awaits! ☀️';
+        else greeting.textContent = 'Good Evening! Nighttime Analytics! 🌙';
 
         // Tableau error fallback
         const iframe = document.querySelector('.tableau-container iframe');
         iframe.onerror = () => {
             iframe.parentElement.innerHTML = `
                 <div style="text-align: center; padding: 2rem; color: #ff6b6b;">
-                    <h3>אופס! 😅</h3>
-                    <p>לא הצלחנו לטעון את ה-Tableau. נסה לרענן או לבדוק את החיבור שלך! 🌐</p>
+                    <h3>Oops! 😅</h3>
+                    <p>Couldn’t load Tableau. Try refreshing or check your connection! 🌐</p>
                 </div>`;
         };
     </script>
