@@ -154,7 +154,7 @@
 
     <nav>
         <a href="#dashboard">Dashboard</a>
-        <a href=" #insights">Insights</a>
+        <a href="#insights">Insights</a>
         <a href="#about">About</a>
     </nav>
 
@@ -171,62 +171,6 @@
 
         <div class="section" id="insights">
             <h2>Key Insights 🌟</h2>
-            <div class="stats-grid">
+            <div class="-stats-grid">
                 <div class="stat-card">
-                    <h3>📊 Data Points</h3>
-                    <p>Lots of Fun Metrics!</p>
-                </div>
-                <div class="stat-card">
-                    <h3>⏳ Fresh Updates</h3>
-                    <p>Always Up to Date!</p>
-                </div>
-                <div class="stat-card">
-                    <h3>🌼 Trends</h3>
-                    <p>Easy Patterns to Spot!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="about">
-            <h2>About Us 😊</h2>
-            <p>We’re a friendly team making data simple and fun with Tableau! 🌸</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2025 Data Breeze Analytics | Crafted with 🌞 & 🍵</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Tableau connection check and fallback
-        const tableauContainer = document.getElementById('tableauEmbed');
-        const iframe = tableauContainer.querySelector('iframe');
-
-        iframe.onerror = () => {
-            tableauContainer.innerHTML = `
-                <div style="text-align: center; padding: 2rem; color: #ffaaa5;">
-                    <h3>Oops! 😅</h3>
-                    <p>Couldn’t connect to Tableau Public. Check your connection or try again!</p>
-                    <p><a href="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" target="_blank" style="color: #a8e6cf;">Open in Tableau Public</a></p>
-                </div>`;
-        };
-
-        // Reload Tableau function
-        function reloadTableau() {
-            tableauContainer.innerHTML = `
-                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
-                    allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>`;
-            const newIframe = tableauContainer.querySelector('iframe');
-            newIframe.onerror = iframe.onerror;
-        }
-    </script>
-</body>
-</html>
+                    <h3>📊 Data
