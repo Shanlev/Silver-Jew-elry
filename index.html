@@ -95,114 +95,12 @@
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
             margin-top: 1rem;
         }
 
         .stat-card {
-            background: #dcedc1;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: #ffd3b6;
-            color: #333;
-        }
-
-        .reload-btn {
-            background: #ffaaa5;
-            color: #fff;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        .reload-btn:hover {
-            background: #a8e6cf;
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Data Breeze Analytics 📊🌿</h1>
-        <p>Fresh Insights, Made Simple! ☀️</p>
-    </header>
-
-    <nav>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#insights">Insights</a>
-        <a href="#about">About</a>
-    </nav>
-
-    <div class="container">
-        <div class="section" id="dashboard">
-            <h2>Interactive Dashboard 🎨</h2>
-            <p>Explore the Data Breeze Below! 🌈</p>
-            <div class="tableau-container" id="tableauEmbed">
-                <iframe src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1" 
-                    allowfullscreen sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-            </div>
-            <button class="reload-btn" onclick="reloadTableau()">Reload Dashboard 🔄</button>
-        </div>
-
-        <div class="section" id="insights">
-            <h2>Key Insights 🌟</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>📊 Data Points</h3>
-                    <p>Lots of Fun Metrics!</p>
-                </div>
-                <div class="stat-card">
-                    <h3>⏳ Fresh Updates</h3>
-                    <p>Always Up to Date!</p>
-                </div>
-                <div class="stat-card">
-                    <h3>🌼 Trends</h3>
-                    <p>Easy Patterns to Spot!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="about">
-            <h2>About Us 😊</h2>
-            <p>We’re a friendly team making data simple and fun with Tableau! 🌸</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2025 Data Breeze Analytics | Crafted with 🌞 & 🍵</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Dynamic greeting
-        const greeting = document.querySelector('header p');
-        const hour = new Date().getHours();
-       
+            background: linear-gradient(135deg
