@@ -5,178 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analytics Hub 📊✨</title>
     <style>
-        /* Gradient Background and General Styles */
+        /* General Styling */
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
-            min-height: 100vh;
-            color: #ffffff;
+            color: #fff;
+            line-height: 1.6;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-            padding: 2rem;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            animation: slideIn 1s ease-out;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in;
         }
 
         h1 {
+            font-size: 3em;
             margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            color: #fff;
-            font-size: 1.8rem;
-            margin: 1.5rem 0;
+            font-size: 1.5em;
+            color: #ffd700;
         }
 
         /* Navigation */
         nav {
             background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            margin: 1rem auto;
-            width: 80%;
-            border-radius: 25px;
-            display: flex;
-            justify-content: space-around;
+            padding: 15px;
+            text-align: center;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            transform: scale(1.1);
-            color: #ffeb3b;
+            color: #ffd700;
         }
 
         /* Main Content */
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            animation: slideIn 1s ease-out;
+        }
+
+        h3 {
+            font-size: 2em;
+            margin-top: 0;
+            color: #ffd700;
+        }
+
+        /* Tableau Dashboard Section */
+        #tableau-section {
             text-align: center;
         }
 
-        .tableau-section {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1.5s ease-out;
-        }
-
-        /* Tableau Embed */
-        #tableau-viz {
+        tableau-viz {
             width: 100%;
-            min-height: 600px;
+            height: 800px;
             border: none;
             border-radius: 10px;
-            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Fun Elements */
-        .emoji-bounce {
+        /* Buttons */
+        .btn {
             display: inline-block;
-            animation: bounce 2s infinite;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd700);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
         }
 
         /* Animations */
-        @keyframes slideIn {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes fadeInUp {
+        @keyframes slideIn {
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 1rem;
+            padding: 20px;
             background: rgba(0, 0, 0, 0.2);
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Data Analytics Hub 📈🚀</h1>
-        <p>Unleash the Power of Insights! ✨</p>
+        <h1>Data Analytics Hub 📊✨</h1>
+        <h2>Explore Insights with Fun & Flair! 🚀</h2>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="#home">Home 🏠</a>
-        <a href="#dashboard">Dashboard 📊</a>
-        <a href="#insights">Insights 💡</a>
+        <a href="#dashboard">Dashboard 📈</a>
+        <a href="#about">About ℹ</a>
         <a href="#contact">Contact 📩</a>
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
+        <!-- Welcome Section -->
         <section id="home">
-            <h2>Welcome to the Future of Data! 🌟</h2>
-            <p>Dive into our interactive analytics and explore trends like never before! 😎</p>
+            <h3>Welcome to the Data Party! 🎉</h3>
+            <p>Dive into awesome analytics and uncover trends with a smile! 😎 Our Tableau dashboard is the star of the show, so scroll down to check it out! 🌟</p>
+            <a href="#dashboard" class="btn">Go to Dashboard 🚀</a>
         </section>
 
+        <!-- Tableau Dashboard Section -->
         <section id="dashboard" class="tableau-section">
-            <h2>Our Awesome Dashboard <span class="emoji-bounce">📊</span></h2>
-            <p>Check out this cool Tableau viz below! 👇</p>
-            <div id="tableau-viz">
-                <iframe 
-                    src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0">
-                </iframe>
-            </div>
+            <h3>Our Super Cool Dashboard 📊</h3>
+            <p>Here’s the magic! Explore your data like a pro with this embedded Tableau viz! ✨</p>
+            <tableau-viz id="tableauViz"
+                src="https://public.tableau.com/views/Book1_17438614664350/Dashboard1"
+                toolbar="bottom"
+                hide-tabs="true">
+            </tableau-viz>
         </section>
 
-        <section id="insights">
-            <h2>Key Insights <span class="emoji-bounce">💡</span></h2>
-            <p>Discover trends, patterns, and more with our dynamic data visualizations! 🎉</p>
+        <!-- About Section -->
+        <section id="about">
+            <h3>About Us ℹ</h3>
+            <p>We’re a team of data nerds who love making analytics fun and accessible! 🎯 Let’s turn numbers into stories together! 📖</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h3>Get in Touch 📩</h3>
+            <p>Have questions? Hit us up at <a href="mailto:info@datahub.com">info@datahub.com</a>! We’d love to chat! 💬</p>
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Data Analytics Hub | Made with ❤ & ☕</p>
+        <p>&copy; 2025 Data Analytics Hub | Made with ❤ and ☕</p>
     </footer>
 
+    <!-- Tableau Embedding API -->
+    <script src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js" type="module"></script>
+
+    <!-- Custom JavaScript -->
     <script>
-        // Simple JS to enhance interactivity
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const sectionId = link.getAttribute('href').substring(1);
-                    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-
-            // Add a fun alert after 5 seconds
-            setTimeout(() => {
-                alert('Enjoying the data? Let’s make analytics fun! 🎉');
-            }, 5000);
         });
+
+        // Dynamic welcome message
+        const welcomeMsg = document.querySelector('#home p');
+        const messages = [
+            "Dive into awesome analytics and uncover trends with a smile! 😎",
+            "Data is more fun when it’s colorful and cool! 🌈",
+            "Let’s make sense of the numbers together! 🤓"
+        ];
+        let msgIndex = 0;
+        setInterval(() => {
+            welcomeMsg.textContent = messages[msgIndex];
+            msgIndex = (msgIndex + 1) % messages.length;
+        }, 3000);
     </script>
 </body>
 </html>
